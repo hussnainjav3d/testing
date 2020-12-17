@@ -2,14 +2,13 @@
 
 name: BootCamp REact Deploy Testing
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
-
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,12 +28,12 @@ jobs:
         with:
           node-version: 12
       - name: Installing Yarn
-        uses: Borales/actions-yarn@v2.1.1
+        uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: install
       - name: Build Project
         run: yarn build
-        
+
       - name: Installing Surge
         run: npm install -g surge
       - name: Deploy On surge
